@@ -10,7 +10,7 @@ if(isset($_POST["category"])){
 		
             
             <div class='aside'>
-							<h3 class='aside-title'>Categories</h3>
+							<h3 class='aside-title'>Brands</h3>
 							<div class='btn-group-vertical'>
 	";
 	if(mysqli_num_rows($run_query) > 0){
@@ -45,12 +45,13 @@ if(isset($_POST["category"])){
 		echo "</div>";
 	}
 }
+// different Catalogue (brand and category)
 if(isset($_POST["brand"])){
 	$brand_query = "SELECT * FROM brands";
 	$run_query = mysqli_query($con,$brand_query);
 	echo "
 		<div class='aside'>
-							<h3 class='aside-title'>Brand</h3>
+							<h3 class='aside-title'>Categories</h3>
 							<div class='btn-group-vertical'>
 	";
 	if(mysqli_num_rows($run_query) > 0){
@@ -471,9 +472,9 @@ if (isset($_POST["Common"])) {
 								}
 							  
 							echo   
-								'<input type="hidden" name="return" value="http://localhost/myfiles/public_html/payment_success.php"/>
-					                <input type="hidden" name="notify_url" value="http://localhost/myfiles/public_html/payment_success.php">
-									<input type="hidden" name="cancel_return" value="http://localhost/myfiles/public_html/cancel.php"/>
+								'<input type="hidden" name="return" value="http://localhost/huster-store/huster-store/payment_success.php"/>
+					                <input type="hidden" name="notify_url" value="http://localhost/huster-store/huster-store/payment_success.php">
+									<input type="hidden" name="cancel_return" value="http://localhost/huster-store/huster-store/cancel.php"/>
 									<input type="hidden" name="currency_code" value="USD"/>
 									<input type="hidden" name="custom" value="'.$_SESSION["uid"].'"/>
 									<input type="submit" id="submit" name="login_user_with_product" name="submit" class="btn btn-success" value="Ready to Checkout">

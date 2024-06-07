@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 04, 2024 at 04:34 PM
+-- Generation Time: Jun 07, 2024 at 04:36 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `apricot-store`
+-- Database: `huster-store`
 --
 
 DELIMITER $$
@@ -103,7 +103,9 @@ INSERT INTO `cart` (`id`, `p_id`, `ip_add`, `user_id`, `qty`) VALUES
 (56, 1, '::1', 9, 1),
 (71, 61, '127.0.0.1', -1, 1),
 (160, 1, '::1', -1, 1),
-(161, 2, '::1', -1, 1);
+(161, 2, '::1', -1, 1),
+(162, 3, '::1', -1, 1),
+(163, 59, '::1', -1, 1);
 
 -- --------------------------------------------------------
 
@@ -602,7 +604,7 @@ ALTER TABLE `brands`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=162;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=164;
 
 --
 -- AUTO_INCREMENT for table `categories`

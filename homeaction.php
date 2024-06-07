@@ -156,8 +156,8 @@ if(isset($_POST["gethomeProduct"])){
     
 	}
     
-if(isset($_POST["get_selected_Category"]) ||  isset($_POST["search"])){
-	if(isset($_POST["get_selected_Category"])){
+	if(isset($_POST["get_seleted_Category"]) ||  isset($_POST["search"])){
+		if(isset($_POST["get_seleted_Category"])){
 		$id = $_POST["cat_id"];
 		$sql = "SELECT * FROM products,categories WHERE product_cat = '$id' AND product_cat=cat_id";
 	}else {
