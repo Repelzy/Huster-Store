@@ -401,12 +401,12 @@
 								<!-- product widget -->
 								<div class="product-widget">
 									<div class="product-img">
-										<img src="./img/product01.png" alt="">
+										<img src="./img/product_1.jpg" alt="">
 									</div>
 									<div class="product-body">
-										<p class="product-category">Category</p>
-										<h3 class="product-name"><a href="#">product name goes here</a></h3>
-										<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+										<p class="product-category">Vans</p>
+										<h3 class="product-name"><a href="#">Vans UA Old Skool 36 DX Anaheim Factory</a></h3>
+										<h4 class="product-price">$650.00 <del class="product-old-price">$980.00</del></h4>
 									</div>
 								</div>
 								<!-- /product widget -->
@@ -414,12 +414,12 @@
 								<!-- product widget -->
 								<div class="product-widget">
 									<div class="product-img">
-										<img src="./img/product02.png" alt="">
+										<img src="./img/product_2.jpg" alt="">
 									</div>
 									<div class="product-body">
-										<p class="product-category">Category</p>
-										<h3 class="product-name"><a href="#">product name goes here</a></h3>
-										<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+										<p class="product-category">Vans</p>
+										<h3 class="product-name"><a href="#">Vans Old Skool 36 DX Anaheim Factory</a></h3>
+										<h4 class="product-price">$800.00 <del class="product-old-price">$990.00</del></h4>
 									</div>
 								</div>
 								<!-- /product widget -->
@@ -427,12 +427,12 @@
 								<!-- product widget -->
 								<div class="product-widget">
 									<div class="product-img">
-										<img src="./img/product03.png" alt="">
+										<img src="./img/product_3.jpg" alt="">
 									</div>
 									<div class="product-body">
-										<p class="product-category">Category</p>
-										<h3 class="product-name"><a href="#">product name goes here</a></h3>
-										<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+										<p class="product-category">Vans</p>
+										<h3 class="product-name"><a href="#">Vans Sk8-Hi</a></h3>
+										<h4 class="product-price">$600.00 <del class="product-old-price">$990.00</del></h4>
 									</div>
 								</div>
 								<!-- product widget -->
@@ -453,12 +453,12 @@
 								<!-- product widget -->
 								<div class="product-widget">
 									<div class="product-img">
-										<img src="./img/product04.png" alt="">
+										<img src="./img/product_4.jpg" alt="">
 									</div>
 									<div class="product-body">
-										<p class="product-category">Category</p>
-										<h3 class="product-name"><a href="#">product name goes here</a></h3>
-										<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+										<p class="product-category">Palladium</p>
+										<h3 class="product-name"><a href="#">Palladium Pampalicious Starlight Blue</a></h3>
+										<h4 class="product-price">$600.00 <del class="product-old-price">$990.00</del></h4>
 									</div>
 								</div>
 								<!-- /product widget -->
@@ -466,12 +466,12 @@
 								<!-- product widget -->
 								<div class="product-widget">
 									<div class="product-img">
-										<img src="./img/product05.png" alt="">
+										<img src="./img/product_5.jpg" alt="">
 									</div>
 									<div class="product-body">
-										<p class="product-category">Category</p>
-										<h3 class="product-name"><a href="#">product name goes here</a></h3>
-										<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+										<p class="product-category">Palladium</p>
+										<h3 class="product-name"><a href="#">Palladium Jazzelle Pallakix Hi CVS</a></h3>
+										<h4 class="product-price">$900.00 <del class="product-old-price">$1200.00</del></h4>
 									</div>
 								</div>
 								<!-- /product widget -->
@@ -479,12 +479,12 @@
 								<!-- product widget -->
 								<div class="product-widget">
 									<div class="product-img">
-										<img src="./img/product06.png" alt="">
+										<img src="./img/product_6.jpg" alt="">
 									</div>
 									<div class="product-body">
-										<p class="product-category">Category</p>
-										<h3 class="product-name"><a href="#">product name goes here</a></h3>
-										<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+										<p class="product-category">Palladium</p>
+										<h3 class="product-name"><a href="#">Palladium Pallaphoenix Flame C</a></h3>
+										<h4 class="product-price">$800.00 <del class="product-old-price">$900.00</del></h4>
 									</div>
 								</div>
 								<!-- product widget -->
@@ -494,12 +494,12 @@
 								<!-- product widget -->
 								<div class="product-widget">
 									<div class="product-img">
-										<img src="./img/product07.png" alt="">
+										<img src="./img/product_7.jpg" alt="">
 									</div>
 									<div class="product-body">
-										<p class="product-category">Category</p>
-										<h3 class="product-name"><a href="#">product name goes here</a></h3>
-										<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+										<p class="product-category">New Balance</p>
+										<h3 class="product-name"><a href="#">New Balance 530 Beige Angora</a></h3>
+										<h4 class="product-price">$1000.00 <del class="product-old-price">$1200.00</del></h4>
 									</div>
 								</div>
 								<!-- /product widget -->
@@ -507,12 +507,12 @@
 								<!-- product widget -->
 								<div class="product-widget">
 									<div class="product-img">
-										<img src="./img/product08.png" alt="">
+										<img src="./img/product_8.jpg" alt="">
 									</div>
 									<div class="product-body">
-										<p class="product-category">Category</p>
-										<h3 class="product-name"><a href="#">product name goes here</a></h3>
-										<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+										<p class="product-category">New Balance</p>
+										<h3 class="product-name"><a href="#">New Balance 550 Triple White</a></h3>
+										<h4 class="product-price">$1400.00 <del class="product-old-price">$1800.00</del></h4>
 									</div>
 								</div>
 								<!-- /product widget -->
@@ -520,12 +520,12 @@
 								<!-- product widget -->
 								<div class="product-widget">
 									<div class="product-img">
-										<img src="./img/product09.png" alt="">
+										<img src="./img/product_9.jpg" alt="">
 									</div>
 									<div class="product-body">
-										<p class="product-category">Category</p>
-										<h3 class="product-name"><a href="#">product name goes here</a></h3>
-										<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+										<p class="product-category">New Balance</p>
+										<h3 class="product-name"><a href="#">New Balance 550 Dusty Blue</a></h3>
+										<h4 class="product-price">$1200.00 <del class="product-old-price">$1500.00</del></h4>
 									</div>
 								</div>
 								<!-- product widget -->
@@ -550,12 +550,12 @@
 								<!-- product widget -->
 								<div class="product-widget">
 									<div class="product-img">
-										<img src="./img/product01.png" alt="">
+										<img src="./img/product_10.jpg" alt="">
 									</div>
 									<div class="product-body">
-										<p class="product-category">Category</p>
-										<h3 class="product-name"><a href="#">product name goes here</a></h3>
-										<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+										<p class="product-category">K-Swiss</p>
+										<h3 class="product-name"><a href="#">K-Swiss Si-Defier 7.0</a></h3>
+										<h4 class="product-price">$400.00 <del class="product-old-price">$1200.00</del></h4>
 									</div>
 								</div>
 								<!-- /product widget -->
@@ -563,12 +563,12 @@
 								<!-- product widget -->
 								<div class="product-widget">
 									<div class="product-img">
-										<img src="./img/product02.png" alt="">
+										<img src="./img/product_11.jpg" alt="">
 									</div>
 									<div class="product-body">
-										<p class="product-category">Category</p>
-										<h3 class="product-name"><a href="#">product name goes here</a></h3>
-										<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+										<p class="product-category">K-Swiss</p>
+										<h3 class="product-name"><a href="#">K-Swiss Donovan WVN</a></h3>
+										<h4 class="product-price">$600.00 <del class="product-old-price">$1000.00</del></h4>
 									</div>
 								</div>
 								<!-- /product widget -->
@@ -576,12 +576,12 @@
 								<!-- product widget -->
 								<div class="product-widget">
 									<div class="product-img">
-										<img src="./img/product03.png" alt="">
+										<img src="./img/product_12.jpg" alt="">
 									</div>
 									<div class="product-body">
-										<p class="product-category">Category</p>
-										<h3 class="product-name"><a href="#">product name goes here</a></h3>
-										<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+										<p class="product-category">K-Swiss</p>
+										<h3 class="product-name"><a href="#">K-Swiss ST529 Heritage</a></h3>
+										<h4 class="product-price">$400.00 <del class="product-old-price">$1000.00</del></h4>
 									</div>
 								</div>
 								<!-- product widget -->
@@ -591,12 +591,12 @@
 								<!-- product widget -->
 								<div class="product-widget">
 									<div class="product-img">
-										<img src="./img/product04.png" alt="">
+										<img src="./img/product_13.jpg" alt="">
 									</div>
 									<div class="product-body">
-										<p class="product-category">Category</p>
-										<h3 class="product-name"><a href="#">product name goes here</a></h3>
-										<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+										<p class="product-category">Sneaker Buzz</p>
+										<h3 class="product-name"><a href="#">Dép Sneaker Buzz Classic Slide II</a></h3>
+										<h4 class="product-price">$250.00 <del class="product-old-price">$300.00</del></h4>
 									</div>
 								</div>
 								<!-- /product widget -->
@@ -605,12 +605,12 @@
 								<!-- product widget -->
 								<div class="product-widget">
 									<div class="product-img">
-										<img src="./img/product05.png" alt="">
+										<img src="./img/product_14.jpg" alt="">
 									</div>
 									<div class="product-body">
-										<p class="product-category">Category</p>
-										<h3 class="product-name"><a href="#">product name goes here</a></h3>
-										<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+										<p class="product-category">Sneaker Buzz</p>
+										<h3 class="product-name"><a href="#">Dép Sneaker Buzz Cloud Slide</a></h3>
+										<h4 class="product-price">$250.00 <del class="product-old-price">$400.00</del></h4>
 									</div>
 								</div>
 								<!-- /product widget -->
@@ -618,12 +618,12 @@
 								<!-- product widget -->
 								<div class="product-widget">
 									<div class="product-img">
-										<img src="./img/product06.png" alt="">
+										<img src="./img/product_15.jpg" alt="">
 									</div>
 									<div class="product-body">
-										<p class="product-category">Category</p>
-										<h3 class="product-name"><a href="#">product name goes here</a></h3>
-										<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+										<p class="product-category">Sneaker Buzz</p>
+										<h3 class="product-name"><a href="#">Dép Buzz Y-Strap Daisy</a></h3>
+										<h4 class="product-price">$350.00 <del class="product-old-price">$500.00</del></h4>
 									</div>
 								</div>
 								<!-- product widget -->
