@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$db = "apricot-store";
+$db = "huster-store";
 
 
 // Create connection

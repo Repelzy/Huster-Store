@@ -3,19 +3,24 @@ session_start();
 include("../../db.php");
 include "sidenav.php";
 include "topheader.php";
-if(isset($_POST['btn_save']))
-{
-$first_name=$_POST['first_name'];
-$last_name=$_POST['last_name'];
-$email=$_POST['email'];
-$user_password=$_POST['password'];
-$mobile=$_POST['phone'];
-$address1=$_POST['city'];
-$address2=$_POST['country'];
 
-mysqli_query($con,"insert into user_info(first_name, last_name,email,password,mobile,address1,address2) values ('$first_name','$last_name','$email','$user_password','$mobile','$address1','$address2')") 
-			or die ("Query 1 is inncorrect........"); 
-mysqli_close($con);
+if(isset($_POST['btn_save'])) {
+  $first_name = mysqli_real_escape_string($con, $_POST['first_name']);
+  $last_name = mysqli_real_escape_string($con, $_POST['last_name']);
+  $email = mysqli_real_escape_string($con, $_POST['email']);
+  $user_password = mysqli_real_escape_string($con, $_POST['password']);
+  $mobile = mysqli_real_escape_string($con, $_POST['phone']);
+  $address1 = mysqli_real_escape_string($con, $_POST['city']);
+  $address2 = mysqli_real_escape_string($con, $_POST['country']);
+
+  // Hash the password using MD5
+  $hashed_password = md5($user_password);
+
+  $query = "INSERT INTO user_info (first_name, last_name, email, password, mobile, address1, address2) 
+            VALUES ('$first_name', '$last_name', '$email', '$hashed_password', '$mobile', '$address1', '$address2')";
+
+  mysqli_query($con, $query) or die ("Query 1 is incorrect..."); 
+  mysqli_close($con);
 }
 
 

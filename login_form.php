@@ -17,20 +17,15 @@ if (isset($_POST["login_user_with_product"])) {
 		<div class="loader"></div>
 	</div>
 	<div class="container-fluid">
-				<!-- row -->
 				
 
 					<div class="login-marg">
-						<!-- Billing Details -->
-						
-						
-						<!-- /Billing Details -->
 						
 						
 								<form onsubmit="return false" id="login" class="login100-form ">
 									<div class="billing-details jumbotron">
                                     <div class="section-title">
-                                        <h2 class="login100-form-title p-b-49" >Đăng nhập đi :)))</h2>
+                                        <h2 class="login100-form-title p-b-49" >Đăng nhập</h2>
                                     </div>
                                    
                                     
@@ -46,35 +41,19 @@ if (isset($_POST["login_user_with_product"])) {
                                     
                                     <div class="text-pad" >
                                        <a href="#">
-                                           Quên mật khẩu đúng khum?
+                                          Quên mật khẩu?
                                        </a>
                                         
                                     </div>
                                     
                                         <input class="primary-btn btn-block"   type="submit"  Value="Đăng nhập">
                                         
-                                        <div class="panel-footer"><div class="alert alert-danger"><h4 id="e_msg"></h4></div></div>
-                                    
-                                    	
                                         
                                     
-
+                                    	
                                 </div>
                                 
 								</form>
                            
-						<!-- Shiping Details -->
-						
-						<!-- /Shiping Details -->
-
-						<!-- Order notes -->
-						
-						<!-- /Order notes -->
 					</div>
-
-					<!-- Order Details -->
-					
-					<!-- /Order Details -->
-				
-				<!-- /row -->
 			</div>
