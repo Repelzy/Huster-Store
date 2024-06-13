@@ -44,30 +44,28 @@ session_start();
 		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
     <style>
-        #navigation {
-          background: #FF4E50;  /* fallback for old browsers */
-            background: -webkit-linear-gradient(to right, #F9D423, #FF4E50);  /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to right, #F9D423, #FF4E50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+#navigation {
+  background: #dfe3ee;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #dfe3ee, #bac6e1);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #dfe3ee, #bac6e1); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
 
-          
-        }
-        #header {
-  
-            background: #780206;  /* fallback for old browsers */
-            background: -webkit-linear-gradient(to right, #061161, #780206);  /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to right, #061161, #780206); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+/* Gradient nền mix màu cho #header */
+#header {
+  background: #00008B;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #00008B, #4682B4, #87CEFA, #FFFFFF);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #00008B, #4682B4, #87CEFA, #FFFFFF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
 
-  
-        }
-        #top-header {
-              
-  
-            background: #870000;  /* fallback for old browsers */
-            background: -webkit-linear-gradient(to right, #190A05, #870000);  /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to right, #190A05, #870000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+/* Gradient nền cho #top-header */
+#top-header {
+  background: #dfe3ee;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #dfe3ee, #add8e6);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #dfe3ee, #add8e6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
 
 
-        }
+        
         #footer {
             background: #7474BF;  /* fallback for old browsers */
             background: -webkit-linear-gradient(to right, #348AC7, #7474BF);  /* Chrome 10-25, Safari 5.1-6 */

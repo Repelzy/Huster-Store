@@ -10,25 +10,25 @@
     <div class="carousel-inner">
 
       <div class="item active">
-        <img src="img/banner3.jpg" alt="Los Angeles" style="width:100%;">
+        <img src="img/web4.jpg" alt="Los Angeles" style="width:100%;">
         
       </div>
 
       <div class="item">
-        <img src="img/banner2.jpg" style="width:100%;">
+        <img src="img/danh-muc-converse-0723.jpg" style="width:100%;">
         
       </div>
     
       <div class="item">
-        <img src="img/banner4.jpg" alt="New York" style="width:100%;">
+        <img src="img/danh-muc-kswiss-0723.jpg" alt="New York" style="width:100%;">
         
       </div>
       <div class="item">
-        <img src="img/banner1.jpg" alt="New York" style="width:100%;">
+        <img src="img/danh-muc-palladium-0723.jpg" alt="New York" style="width:100%;">
         
       </div>
       <div class="item">
-        <img src="img/banner3.jpg" alt="New York" style="width:100%;">
+        <img src="img/danh-muc-supra-0723.jpg" alt="New York" style="width:100%;">
         
       </div>
   
@@ -61,7 +61,7 @@
 					<div class="col-md-4 col-xs-6">
 						<a href="product.php?p=78"><div class="shop">
 							<div class="shop-img">
-								<img src="./img/shop01.png" alt="">
+								<img src="./img/product_11.jpg" alt="">
 							</div>
 							<div class="shop-body">
 								<h3>Vans<br>Collection</h3>
@@ -75,7 +75,7 @@
 					<div class="col-md-4 col-xs-6">
 						<a href="product.php?p=72"><div class="shop">
 							<div class="shop-img">
-								<img src="./img/shop03.png" alt="">
+								<img src="./img/product_10.jpg" alt="">
 							</div>
 							<div class="shop-body">
 								<h3>Converse<br>Collection</h3>
@@ -89,7 +89,7 @@
 					<div class="col-md-4 col-xs-6">
 						<a href="product.php?p=79"><div class="shop">
 							<div class="shop-img">
-								<img src="./img/shop02.png" alt="">
+								<img src="./img/product_9.jpg" alt="">
 							</div>
 							<div class="shop-body">
 								<h3>Sneaker Buzz<br>Collection</h3>
