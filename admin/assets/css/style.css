@@ -174,7 +174,7 @@ figure {
 p {
   margin-bottom: 0px;
   font-size: 15px;
-  color: #777; }
+  color: #fffefe; }
 
 h2 {
   line-height: 1.66;
@@ -195,7 +195,7 @@ h2 {
 body {
   font-size: 13px;
   line-height: 1.8;
-  color: #1e29;
+  color: rgb(255, 255, 255);
   background: #fff;
   font-weight: 400;
   font-family: Poppins; }
