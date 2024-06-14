@@ -106,7 +106,26 @@ session_start();
     .glyphicon-chevron-right:before{
         content:"\f054"
     }
-        
+    
+	
+	.search-form {
+	display: flex;
+	align-items: center;
+	}
+
+	.search-form .input-select {
+		margin-right: 10px;
+	}
+
+	.search-form .input {
+		flex: 1;
+		margin-right: 10px;
+	}
+
+	.search-form .search-btn {
+		margin: 0;
+	}
+
 
        
         
@@ -189,7 +208,7 @@ session_start();
 						<!-- SEARCH BAR -->
 						<div class="col-md-6">
 							<div class="header-search">
-								<form>
+								<form class="search-form">
 									<select class="input-select">
 										<option value="1">CONVERSE</option>
 										<option value="2">VANS</option>
