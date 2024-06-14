@@ -186,7 +186,7 @@ h2 {
   font-size: 36px; }
 
 .main {
-  background: #f8f8f8;
+  background: #fff;
   padding: 150px 0; }
 
 .clear {
@@ -195,8 +195,8 @@ h2 {
 body {
   font-size: 13px;
   line-height: 1.8;
-  color: #222;
-  background: #f8f8f8;
+  color: #1e29;
+  background: #fff;
   font-weight: 400;
   font-family: Poppins; }
 
