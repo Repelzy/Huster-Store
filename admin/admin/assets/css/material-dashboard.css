@@ -60,7 +60,7 @@ body {
   line-height: 1.5;
   color: #212529;
   text-align: left;
-  background-color: #fafafa;
+  background-color: #009aae;
 }
 
 [tabindex="-1"]:focus {
@@ -19638,7 +19638,7 @@ Copyright (c) 2015 Daniel Eden
 
 .dark-edition .footer ul li a,
 .dark-edition .footer .copyright {
-  color: #a9afbbd1;
+  color: #00cae3;
 }
 
 .dark-edition .footer .copyright a {
@@ -19654,7 +19654,7 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .dark-edition .card {
-  background: #202940;
+  background: linear-gradient(#000 , #2a3f6c);
 }
 
 .dark-edition .card .card-header.card-header-text .card-title,
