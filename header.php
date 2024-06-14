@@ -278,6 +278,23 @@ session_start();
 				<!-- container -->
 			</div>
 			<!-- /MAIN HEADER -->
+			<nav id='navigation'>
+            <div class="container" id="get_category_home">
+                <div id='responsive-nav'>
+                    <ul class='main-nav nav navbar-nav'>
+                        <li class='active'><a href='index.php'>Home</a></li>
+                        <li><a href='store.php'>CONVERSE</a></li>
+                        <li><a href='store.php'>VANS</a></li>
+                        <li><a href='store.php'>PALLADIUM</a></li>
+                        <li><a href='store.php'>NEW BALANCE</a></li>
+                        <li><a href='store.php'>K-SWISS</a></li>
+                        <li><a href='store.php'>SNEAKER BUZZ</a></li>
+                        <li><a href='store.php'>ACCESSORIES</a></li>
+                        <li><a href='store.php'>SUPRA</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
 		</header>
 		<!-- /HEADER -->
 		<nav id='navigation'>
