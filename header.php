@@ -278,7 +278,7 @@ session_start();
 				<!-- container -->
 			</div>
 			<!-- /MAIN HEADER -->
-			<nav id='navigation'>
+			 <nav id='navigation'>
             <div class="container" id="get_category_home">
                 <div id='responsive-nav'>
                     <ul class='main-nav nav navbar-nav'>
