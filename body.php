@@ -1,4 +1,90 @@
+<script>
+  function setCountdownTimer() {
+    const countdownDate = localStorage.getItem('countdownDate');
+    let endDate;
 
+    if (countdownDate) {
+      endDate = new Date(countdownDate);
+    } else {
+      endDate = new Date();
+      endDate.setDate(endDate.getDate() + 12);
+      localStorage.setItem('countdownDate', endDate);
+    }
+
+    const interval = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = endDate - now;
+
+      if (distance < 0) {
+        clearInterval(interval);
+        localStorage.removeItem('countdownDate');
+        document.querySelector('.hot-deal-countdown').innerHTML = "EXPIRED";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.querySelector('.hot-deal-countdown').innerHTML = `
+        <li><div><h3>${days}</h3><span>Days</span></div></li>
+        <li><div><h3>${hours}</h3><span>Hours</span></div></li>
+        <li><div><h3>${minutes}</h3><span>Mins</span></div></li>
+        <li><div><h3>${seconds}</h3><span>Secs</span></div></li>
+      `;
+    }, 1000);
+  }
+
+  document.addEventListener('DOMContentLoaded', setCountdownTimer);
+</script>
+<style>
+        #hot-deal {
+            background-image: url('img/shoes1.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 90px 0;
+            color: #fff;
+            text-align: center;
+        }
+
+        .hot-deal .hot-deal-countdown {
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .hot-deal .hot-deal-countdown li {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hot-deal .hot-deal-countdown h3 {
+            font-size: 36px;
+            margin: 0;
+        }
+
+        .hot-deal .hot-deal-countdown span {
+            font-size: 14px;
+        }
+
+        .hot-deal .text-uppercase {
+            text-transform: uppercase;
+        }
+
+        .primary-btn.cta-btn {
+            background: #D10024;
+            color: #fff;
+            padding: 10px 30px;
+            text-transform: uppercase;
+            font-weight: 700;
+            border-radius: 2px;
+            display: inline-block;
+            margin-top: 20px;
+        }
+    </style>
    <div class="main main-raised">
         <div class="container mainn-raised" style="width:100%;">
   
@@ -220,51 +306,51 @@
 		</div>
 		<!-- /SECTION -->
 
-		<!-- HOT DEAL SECTION -->
-		<div id="hot-deal" class="section mainn mainn-raised">
-			<!-- container -->
-			<div class="container">
-				<!-- row -->
-				<div class="row">
-					<div class="col-md-12">
-						<div class="hot-deal">
-							<ul class="hot-deal-countdown">
-								<li>
-									<div>
-										<h3>02</h3>
-										<span>Days</span>
-									</div>
-								</li>
-								<li>
-									<div>
-										<h3>10</h3>
-										<span>Hours</span>
-									</div>
-								</li>
-								<li>
-									<div>
-										<h3>34</h3>
-										<span>Mins</span>
-									</div>
-								</li>
-								<li>
-									<div>
-										<h3>60</h3>
-										<span>Secs</span>
-									</div>
-								</li>
-							</ul>
-							<h2 class="text-uppercase">hot deal this week</h2>
-							<p>New Collection Up to 50% OFF</p>
-							<a class="primary-btn cta-btn" href="store.php">Shop now</a>
-						</div>
-					</div>
-				</div>
-				<!-- /row -->
-			</div>
-			<!-- /container -->
-		</div>
-		<!-- /HOT DEAL SECTION -->
+		 <!-- HOT DEAL SECTION -->
+		 <div id="hot-deal" class="section mainn mainn-raised" style="background-image: url('img/shoes1.jpg');">
+            <!-- container -->
+            <div class="container">
+                <!-- row -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="hot-deal">
+                            <ul class="hot-deal-countdown">
+                                <li>
+                                    <div>
+                                        <h3 id="days">12</h3>
+                                        <span>Days</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <h3 id="hours">00</h3>
+                                        <span>Hours</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <h3 id="minutes">00</h3>
+                                        <span>Mins</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <h3 id="seconds">00</h3>
+                                        <span>Secs</span>
+                                    </div>
+                                </li>
+                            </ul>
+                            <h2 class="text-uppercase">hot deal this week</h2>
+                            <p>New Collection Up to 50% OFF</p>
+                            <a class="primary-btn cta-btn" href="store.php">Shop now</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- /row -->
+            </div>
+            <!-- /container -->
+        </div>
+        <!-- /HOT DEAL SECTION -->
 		
 
 		<!-- SECTION -->
