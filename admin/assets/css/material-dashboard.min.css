@@ -14063,7 +14063,7 @@ label {
 .btn.btn-facebook:hover {
   color: #fff;
   background-color: #37538d;
-  border-color: #91ebeeb3;
+  border-color: #91ebeed6;
 }
 .btn.btn-facebook.active,
 .btn.btn-facebook:active,
@@ -14071,7 +14071,7 @@ label {
 .show > .btn.btn-facebook.dropdown-toggle {
   color: #fff;
   background-color: #37538d;
-  border-color: #91ebeeb3;
+  border-color: #91ebeed6;
   box-shadow: 0 2px 2px 0 rgba(59, 89, 152, 0.14),
     0 3px 1px -2px rgba(59, 89, 152, 0.2), 0 1px 5px 0 rgba(59, 89, 152, 0.12);
 }
@@ -15988,8 +15988,8 @@ label {
 }
 .dark-edition .btn.btn-primary {
   color: #fff;
-  background-color: #3f909e;
-  border-color: #3f909e;
+  background-color: #48c3d2;
+  border-color: #48c3d2;
   box-shadow: 0 2px 2px 0 rgba(145, 63, 158, 0.14),
     0 3px 1px -2px rgba(145, 63, 158, 0.2), 0 1px 5px 0 rgba(145, 63, 158, 0.12);
 }
@@ -16028,7 +16028,7 @@ label {
 }
 .open > .dark-edition .btn.btn-primary.dropdown-toggle.bmd-btn-icon {
   color: inherit;
-  background-color: #3f909e;
+  background-color: #48c3d2;
 }
 .open > .dark-edition .btn.btn-primary.dropdown-toggle.bmd-btn-icon:hover {
   background-color: #9b43a9;
@@ -16039,8 +16039,8 @@ label {
 .dark-edition .btn.btn-primary:disabled.focus,
 .dark-edition .btn.btn-primary:disabled:focus,
 .dark-edition .btn.btn-primary:disabled:hover {
-  background-color: #3f909e;
-  border-color: #3f909e;
+  background-color: #48c3d2;
+  border-color: #48c3d2;
 }
 .dark-edition .btn.btn-primary:active,
 .dark-edition .btn.btn-primary:focus,
@@ -16056,7 +16056,7 @@ label {
 .dark-edition .btn.btn-primary.btn-link:focus,
 .dark-edition .btn.btn-primary.btn-link:hover {
   background-color: transparent;
-  color: #3f909e;
+  color: #48c3d2;
 }
 .dark-edition .btn.btn-warning {
   color: #fff;
@@ -16430,7 +16430,7 @@ label {
 .dark-edition .btn.btn-facebook:hover {
   color: #fff;
   background-color: #37538d;
-  border-color: #91ebeeb3;
+  border-color: #91ebeed6;
 }
 .dark-edition .btn.btn-facebook.active,
 .dark-edition .btn.btn-facebook:active,
@@ -16438,7 +16438,7 @@ label {
 .show > .dark-edition .btn.btn-facebook.dropdown-toggle {
   color: #fff;
   background-color: #37538d;
-  border-color: #91ebeeb3;
+  border-color: #91ebeed6;
   box-shadow: 0 2px 2px 0 rgba(59, 89, 152, 0.14),
     0 3px 1px -2px rgba(59, 89, 152, 0.2), 0 1px 5px 0 rgba(59, 89, 152, 0.12);
 }
@@ -16563,7 +16563,7 @@ label {
   color: #55acee;
 }
 .dark-edition .sidebar[data-color="purple"] li.active > a {
-  background: linear-gradient(60deg, #1f5aa2, #3f909e);
+  background: linear-gradient(60deg, #1f5aa2, #48c3d2);
   box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.14),
     0 7px 10px -5px rgba(156, 39, 176, 0.4);
 }
@@ -16656,7 +16656,7 @@ label {
   color: #fff;
 }
 .dark-edition .navbar .notification {
-  background: linear-gradient(60deg, #1f5aa2, #3f909e);
+  background: linear-gradient(60deg, #1f5aa2, #48c3d2);
   border: 0;
   height: 18px;
   min-width: 18px;
@@ -16666,7 +16666,7 @@ label {
   background: #212529 !important;
 }
 .dark-edition .navbar.bg-primary {
-  background-color: #3f909e !important;
+  background-color: #48c3d2 !important;
 }
 .dark-edition .navbar.bg-info {
   background-color: #029eb1 !important;
@@ -16694,7 +16694,7 @@ label {
   animation: n 1s infinite;
   -webkit-background-clip: text;
   background-clip: text;
-  background-image: linear-gradient(60deg, #1f5aa2, #3f909e);
+  background-image: linear-gradient(60deg, #1f5aa2, #48c3d2);
   color: transparent;
 }
 .dark-edition .card {
@@ -16727,7 +16727,7 @@ label {
 .dark-edition .card .card-footer .stats a {
   -webkit-background-clip: text;
   background-clip: text;
-  background-image: linear-gradient(60deg, #1f5aa2, #3f909e);
+  background-image: linear-gradient(60deg, #1f5aa2, #48c3d2);
   color: transparent;
 }
 .dark-edition .card.bg-warning,
@@ -16778,10 +16778,10 @@ label {
   .card-header-primary:not(.card-header-icon):not(.card-header-text),
 .dark-edition .card.card-rotate.bg-primary .back,
 .dark-edition .card.card-rotate.bg-primary .front {
-  background: linear-gradient(60deg, #1f5aa2, #3f909e);
+  background: linear-gradient(60deg, #1f5aa2, #48c3d2);
 }
 .dark-edition .primary-link {
-  background-image: linear-gradient(60deg, #1f5aa2, #3f909e) !important;
+  background-image: linear-gradient(60deg, #1f5aa2, #48c3d2) !important;
 }
 .dark-edition .info-link {
   background-image: linear-gradient(60deg, #029eb1, #25b1c3) !important;
@@ -18899,7 +18899,7 @@ fieldset[disabled][disabled] .dark-edition .has-error .form-control {
   border: 2px solid #303c58;
 }
 .dark-edition .fixed-plugin .badge.badge-purple {
-  background-color: #3f909e;
+  background-color: #48c3d2;
 }
 .dark-edition .fixed-plugin .badge.badge-azure {
   background-color: #029eb1;
@@ -18933,7 +18933,7 @@ fieldset[disabled][disabled] .dark-edition .has-error .form-control {
 .dark-edition .dropdown:not(.show-dropdown) .dropdown-menu li > a:hover {
   box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.14),
     0 7px 10px -5px rgba(156, 39, 176, 0.4);
-  background: linear-gradient(60deg, #1f5aa2, #3f909e);
+  background: linear-gradient(60deg, #1f5aa2, #48c3d2);
   color: #fff;
 }
 .dark-edition .text-primary {
@@ -18997,7 +18997,7 @@ fieldset[disabled][disabled] .dark-edition .has-error .form-control {
   background-color: unset;
 }
 .dark-edition .alert.alert-primary {
-  background: linear-gradient(60deg, #1f5aa2, #3f909e);
+  background: linear-gradient(60deg, #1f5aa2, #48c3d2);
   background-color: unset;
 }
 .dark-edition .alert .close {
