@@ -105,7 +105,7 @@ CREATE TABLE orders_info (
 
 -- Table structure for products
 CREATE TABLE products (
-    product_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    product_id INT NOT NULL PRIMARY KEY,
     product_cat INT NOT NULL,
     product_brand INT NOT NULL,
     product_title VARCHAR(100) NOT NULL,
