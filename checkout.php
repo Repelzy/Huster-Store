@@ -132,10 +132,6 @@ form .newsletter-btn:hover {
                         <input type="text" id="city" name="city" class="form-control" value="'.$row["address2"].'" pattern="^[a-zA-Z ]+$" required>
                         <div class="row">
                         <div class="col-50">
-                            <label for="state">State</label>
-                            <input type="text" id="state" name="state" class="form-control" pattern="^[a-zA-Z ]+$" required>
-                        </div>
-                        <div class="col-50">
                             <label for="zip">Zip</label>
                             <input type="text" id="zip" name="zip" class="form-control" pattern="^[0-9]{6}(?:-[0-9]{4})?$" required>
                         </div>

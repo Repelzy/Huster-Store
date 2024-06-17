@@ -78,7 +78,7 @@ if (isset($_POST["page"])) {
 if (isset($_POST["getProduct"])) {
     $limit = 9;
     $start = isset($_POST["setPage"]) ? ($_POST["pageNumber"] * $limit) - $limit : 0;
-    $product_query = "SELECT * FROM products,categories WHERE product_cat=cat_id LIMIT $start,$limit";
+    $product_query = "SELECT * FROM products, categories WHERE product_cat = cat_id LIMIT $start, $limit";
     $run_query = mysqli_query($con, $product_query);
 
     if (mysqli_num_rows($run_query) > 0) {
@@ -129,14 +129,14 @@ if (isset($_POST["getProduct"])) {
 if (isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isset($_POST["search"])) {
     if (isset($_POST["get_seleted_Category"])) {
         $id = $_POST["cat_id"];
-        $sql = "SELECT * FROM products,categories WHERE product_cat = '$id' AND product_cat=cat_id";
+        $sql = "SELECT * FROM products, categories WHERE product_cat = '$id' AND product_cat = cat_id";
     } else if (isset($_POST["selectBrand"])) {
         $id = $_POST["brand_id"];
-        $sql = "SELECT * FROM products,categories WHERE product_brand = '$id' AND product_cat=cat_id";
+        $sql = "SELECT * FROM products, categories WHERE product_brand = '$id' AND product_cat = cat_id";
     } else {
         $keyword = $_POST["keyword"];
         header('Location:store.php');
-        $sql = "SELECT * FROM products,categories WHERE product_cat=cat_id AND product_keywords LIKE '%$keyword%'";
+        $sql = "SELECT * FROM products, categories WHERE product_cat = cat_id AND product_keywords LIKE '%$keyword%'";
     }
 
     $run_query = mysqli_query($con, $sql);
@@ -184,10 +184,10 @@ if (isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || iss
 
 // Add to cart
 if (isset($_POST["addToCart"])) {
-    $p_id = $_POST["proId"];
+    $product_id = $_POST["proId"];
     if (isset($_SESSION["uid"])) {
         $user_id = $_SESSION["uid"];
-        $sql = "SELECT * FROM cart WHERE p_id = '$p_id' AND user_id = '$user_id'";
+        $sql = "SELECT * FROM cart WHERE product_id = '$product_id' AND user_id = '$user_id'";
         $run_query = mysqli_query($con, $sql);
         $count = mysqli_num_rows($run_query);
         if ($count > 0) {
@@ -196,7 +196,7 @@ if (isset($_POST["addToCart"])) {
                     <b>Product is already added into the cart Continue Shopping..!</b>
                 </div>";
         } else {
-            $sql = "INSERT INTO `cart` (`p_id`, `ip_add`, `user_id`, `qty`) VALUES ('$p_id','$ip_add','$user_id','1')";
+            $sql = "INSERT INTO cart (product_id, ip_add, user_id, qty) VALUES ('$product_id', '$ip_add', '$user_id', '1')";
             if (mysqli_query($con, $sql)) {
                 echo "<div class='alert alert-success'>
                         <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
@@ -205,7 +205,7 @@ if (isset($_POST["addToCart"])) {
             }
         }
     } else {
-        $sql = "SELECT id FROM cart WHERE ip_add = '$ip_add' AND p_id = '$p_id' AND user_id = -1";
+        $sql = "SELECT id FROM cart WHERE ip_add = '$ip_add' AND product_id = '$product_id' AND user_id = -1";
         $query = mysqli_query($con, $sql);
         if (mysqli_num_rows($query) > 0) {
             echo "<div class='alert alert-warning'>
@@ -214,7 +214,7 @@ if (isset($_POST["addToCart"])) {
                 </div>";
             exit();
         }
-        $sql = "INSERT INTO `cart` (`p_id`, `ip_add`, `user_id`, `qty`) VALUES ('$p_id','$ip_add','-1','1')";
+        $sql = "INSERT INTO cart (product_id, ip_add, user_id, qty) VALUES ('$product_id', '$ip_add', '-1', '1')";
         if (mysqli_query($con, $sql)) {
             echo "<div class='alert alert-success'>
                     <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
@@ -238,8 +238,8 @@ if (isset($_POST["count_item"])) {
 
 if (isset($_POST["Common"])) {
     $sql = isset($_SESSION["uid"]) ?
-        "SELECT a.product_id, a.product_title, a.product_price, a.product_image, b.id, b.qty FROM products a, cart b WHERE a.product_id = b.p_id AND b.user_id = '$_SESSION[uid]'" :
-        "SELECT a.product_id, a.product_title, a.product_price, a.product_image, b.id, b.qty FROM products a, cart b WHERE a.product_id = b.p_id AND b.ip_add = '$ip_add' AND b.user_id < 0";
+        "SELECT a.product_id, a.product_title, a.product_price, a.product_image, b.id, b.qty FROM products a, cart b WHERE a.product_id = b.product_id AND b.user_id = '$_SESSION[uid]'" :
+        "SELECT a.product_id, a.product_title, a.product_price, a.product_image, b.id, b.qty FROM products a, cart b WHERE a.product_id = b.product_id AND b.ip_add = '$ip_add' AND b.user_id < 0";
     $query = mysqli_query($con, $sql);
 
     // Display Cart Items in Dropdown
@@ -351,7 +351,7 @@ if (isset($_POST["Common"])) {
                         <input type='hidden' name='business' value='hustercart@gmail.com'>
                         <input type='hidden' name='upload' value='1'>";
                 $x = 0;
-                $sql = "SELECT a.product_id, a.product_title, a.product_price, a.product_image, b.id, b.qty FROM products a, cart b WHERE a.product_id = b.p_id AND b.user_id = '$_SESSION[uid]'";
+                $sql = "SELECT a.product_id, a.product_title, a.product_price, a.product_image, b.id, b.qty FROM products a, cart b WHERE a.product_id = b.product_id AND b.user_id = '$_SESSION[uid]'";
                 $query = mysqli_query($con, $sql);
                 while ($row = mysqli_fetch_array($query)) {
                     $x++;
@@ -376,13 +376,12 @@ if (isset($_POST["Common"])) {
     }
 }
 
-
 // Remove Item From cart
 if (isset($_POST["removeItemFromCart"])) {
     $remove_id = $_POST["rid"];
     $sql = isset($_SESSION["uid"]) ?
-        "DELETE FROM cart WHERE p_id = '$remove_id' AND user_id = '$_SESSION[uid]'" :
-        "DELETE FROM cart WHERE p_id = '$remove_id' AND ip_add = '$ip_add'";
+        "DELETE FROM cart WHERE product_id = '$remove_id' AND user_id = '$_SESSION[uid]'" :
+        "DELETE FROM cart WHERE product_id = '$remove_id' AND ip_add = '$ip_add'";
     if (mysqli_query($con, $sql)) {
         echo "<div class='alert alert-danger'>
                 <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
@@ -392,15 +391,14 @@ if (isset($_POST["removeItemFromCart"])) {
     }
 }
 
-
 // Update Item From cart
 if (isset($_POST["updateCartItem"])) {
     $update_id = $_POST["update_id"];
     $qty = $_POST["qty"];
     if (isset($_SESSION["uid"])) {
-        $sql = "UPDATE cart SET qty='$qty' WHERE p_id = '$update_id' AND user_id = '$_SESSION[uid]'";
+        $sql = "UPDATE cart SET qty='$qty' WHERE product_id = '$update_id' AND user_id = '$_SESSION[uid]'";
     } else {
-        $sql = "UPDATE cart SET qty='$qty' WHERE p_id = '$update_id' AND ip_add = '$ip_add'";
+        $sql = "UPDATE cart SET qty='$qty' WHERE product_id = '$update_id' AND ip_add = '$ip_add'";
     }
     if (mysqli_query($con, $sql)) {
         echo "<div class='alert alert-info'>

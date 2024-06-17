@@ -4,11 +4,10 @@ include "db.php";
 
 if (isset($_SESSION["uid"])) {
 
-    $f_name = $_POST["firstname"];
+    $name = $_POST["firstname"];
     $email = $_POST['email'];
     $address = $_POST['address'];
     $city = $_POST['city'];
-    $state = $_POST['state'];
     $zip = $_POST['zip'];
     $cardname = $_POST['cardname'];
     $cardnumber = $_POST['cardNumber'];
@@ -17,8 +16,9 @@ if (isset($_SESSION["uid"])) {
     $user_id = $_SESSION["uid"];
     $total_count = $_POST['total_count'];
     $prod_total = $_POST['total_price'];
-    $trx_id = uniqid('trx_', true); // Generate a unique transaction ID
+    $trx_id = uniqid('trx_', true);
 
+    // Fetch the new order ID
     $sql0 = "SELECT order_id FROM `orders_info`";
     $runquery = mysqli_query($con, $sql0);
     if (mysqli_num_rows($runquery) == 0) {
@@ -30,19 +30,19 @@ if (isset($_SESSION["uid"])) {
         $order_id = $row["max_val"] + 1;
     }
 
+    // Insert into orders_info
     $sql = "INSERT INTO `orders_info` 
-    (`order_id`, `user_id`, `f_name`, `email`, `address`, `city`, `state`, `zip`, `cardname`, `cardnumber`, `expdate`, `prod_count`, `total_amt`, `cvv`, `trx_id`, `p_status`) 
-    VALUES ($order_id, '$user_id', '$f_name', '$email', '$address', '$city', '$state', '$zip', '$cardname', '$cardnumber', '$expdate', '$total_count', '$prod_total', '$cvv', '$trx_id', 'Pending')";
+    (`order_id`, `user_id`, `trx_id`, `name`, `email`, `address`, `city`, `zip`, `cardname`, `cardnumber`, `expdate`, `prod_count`, `total_amt`, `cvv`, `p_status`) 
+    VALUES ($order_id, '$user_id', '$trx_id', '$name', '$email', '$address', '$city', '$zip', '$cardname', '$cardnumber', '$expdate', '$total_count', '$prod_total', '$cvv', 'Pending')";
 
     if (mysqli_query($con, $sql)) {
         for ($i = 1; $i <= $total_count; $i++) {
             $prod_id = $_POST['prod_id_' . $i];
             $prod_price = $_POST['prod_price_' . $i];
             $prod_qty = $_POST['prod_qty_' . $i];
-            $sub_total = (int)$prod_price * (int)$prod_qty;
             $sql1 = "INSERT INTO `order_products` 
-            (`order_pro_id`, `order_id`, `product_id`, `qty`, `amt`) 
-            VALUES (NULL, '$order_id', '$prod_id', '$prod_qty', '$sub_total')";
+            (`order_pro_id`, `order_id`, `product_id`, `qty`) 
+            VALUES (NULL, '$order_id', '$prod_id', '$prod_qty')";
             mysqli_query($con, $sql1);
         }
         $del_sql = "DELETE FROM cart WHERE user_id = $user_id";

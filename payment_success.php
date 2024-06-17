@@ -11,7 +11,7 @@ if (isset($_GET["order_id"])) {
     $sql = "SELECT * FROM orders_info WHERE order_id = '$order_id'";
     $query = mysqli_query($con, $sql);
 
-    // Debugging: Check if the query returns any rows
+    
     if (mysqli_num_rows($query) > 0) {
         $order = mysqli_fetch_array($query);
         $user_id = $order['user_id'];
@@ -28,11 +28,11 @@ if (isset($_GET["order_id"])) {
             echo "Error updating p_status: " . mysqli_error($con);
         }
 
-        $sql = "SELECT p_id, qty FROM cart WHERE user_id = '$cm_user_id'";
+        $sql = "SELECT product_id, qty FROM cart WHERE user_id = '$cm_user_id'";
         $query = mysqli_query($con, $sql);
         if (mysqli_num_rows($query) > 0) {
             while ($row = mysqli_fetch_array($query)) {
-                $product_id[] = $row["p_id"];
+                $product_id[] = $row["product_id"];
                 $qty[] = $row["qty"];
             }
 

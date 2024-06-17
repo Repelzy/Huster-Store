@@ -1,86 +1,73 @@
--- phpMyAdmin SQL Dump
--- version 5.2.1
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Generation Time: Jun 15, 2024 at 06:47 PM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Create the database
+CREATE DATABASE ShoppingWeb;
+GO
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Database: `huster-store`
---
+-- Use the created database
+USE ShoppingWeb;
+GO
 
 -- Table structure for admin_info
 CREATE TABLE admin_info (
-    admin_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    admin_id INT NOT NULL PRIMARY KEY,
     admin_name VARCHAR(100) NOT NULL,
     admin_email VARCHAR(255) NOT NULL UNIQUE,
     admin_password VARCHAR(60) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+);
+GO
 
--- Dumping data for table `admin_info`
-INSERT INTO `admin_info` (`admin_id`, `admin_name`, `admin_email`, `admin_password`) VALUES
-(1, 'admin', 'admin@huster.com', '25f9e794323b453885f5181f1b624d0b');
-
--- Table structure for brands
-CREATE TABLE brands (
-    brand_id INT NOT NULL PRIMARY KEY,
-    brand_title VARCHAR(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
--- Dumping data for table `brands`
-INSERT INTO `brands` (`brand_id`, `brand_title`) VALUES
-(1, 'Slippers'),
-(2, 'High-Top Sneakers'),
-(3, 'Low-Top Sneakers'),
-(4, 'Accessories'),
-(5, 'For Sales');
-
-
--- Table structure for categories
-CREATE TABLE categories (
-    cat_id INT NOT NULL PRIMARY KEY,
-    cat_title VARCHAR(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
--- Dumping data for table `categories`
-INSERT INTO `categories` (`cat_id`, `cat_title`) VALUES
-(1, 'CONVERSE'),
-(2, 'VANS'),
-(3, 'PALLADIUM'),
-(4, 'NEW BALANCE'),
-(5, 'K-SWISS'),
-(6, 'SNEAKER BUZZ\r\n'),
-(7, 'ACCESSORIES'),
-(8, 'SUPRA');
-
--- Table structure for email_info
-CREATE TABLE email_info (
-    email_id INT NOT NULL PRIMARY KEY,
-    email_address VARCHAR(255) NOT NULL UNIQUE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- Table structure for user_info
+
+
 CREATE TABLE user_info (
     user_id INT NOT NULL PRIMARY KEY,
     first_name VARCHAR(50),
     last_name VARCHAR(50),
     email VARCHAR(255) NOT NULL UNIQUE,
     password VARCHAR(60) NOT NULL,
-    mobile VARCHAR(15),
+    phone VARCHAR(15),
     address1 VARCHAR(255),
     address2 VARCHAR(255)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+);
+GO
+
+-- Table structure for brands
+CREATE TABLE brands (
+    brand_id INT NOT NULL PRIMARY KEY,
+    brand_title VARCHAR(100) NOT NULL
+);
+GO
+
+-- Table structure for categories
+CREATE TABLE categories (
+    cat_id INT NOT NULL PRIMARY KEY,
+    cat_title VARCHAR(100) NOT NULL
+);
+GO
+
+-- Table structure for products
+CREATE TABLE products (
+    product_id INT NOT NULL PRIMARY KEY,
+    product_cat INT NOT NULL,
+    product_brand INT NOT NULL,
+    product_title VARCHAR(100) NOT NULL,
+    product_price DECIMAL(10,2) NOT NULL,
+    product_desc TEXT,
+    product_image VARCHAR(255),
+    product_keywords VARCHAR(255),
+    FOREIGN KEY (product_cat) REFERENCES categories(cat_id),
+    FOREIGN KEY (product_brand) REFERENCES brands(brand_id)
+);
+GO
+
+
+
+-- Table structure for email_info
+CREATE TABLE email_info (
+    email_id INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+    email_address VARCHAR(255) NOT NULL UNIQUE
+);
+GO
 
 -- Table structure for orders_info
 CREATE TABLE orders_info (
@@ -98,57 +85,57 @@ CREATE TABLE orders_info (
     total_amt DECIMAL(10,2) NOT NULL,
     p_status VARCHAR(50) NOT NULL,
     cvv VARCHAR(4) NOT NULL,
-    trx_id VARCHAR(255) NOT NULL,
+    trx_id VARCHAR(255) NOT NULL DEFAULT,
     FOREIGN KEY (user_id) REFERENCES user_info(user_id)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
-
--- Table structure for products
-CREATE TABLE products (
-    product_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    product_cat INT NOT NULL,
-    product_brand INT NOT NULL,
-    product_title VARCHAR(100) NOT NULL,
-    product_price DECIMAL(10,2) NOT NULL,
-    product_desc TEXT,
-    product_image VARCHAR(255),
-    product_keywords VARCHAR(255),
-    FOREIGN KEY (product_cat) REFERENCES categories(cat_id),
-    FOREIGN KEY (product_brand) REFERENCES brands(brand_id),
-    INDEX (product_cat),
-    INDEX (product_brand),
-    INDEX (product_title),
-    INDEX (product_cat, product_brand, product_title)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
+);
+GO
 
 -- Table structure for order_products
 CREATE TABLE order_products (
-    order_pro_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    order_pro_id INT NOT NULL PRIMARY KEY,
     order_id INT NOT NULL,
     product_id INT NOT NULL,
     qty INT NOT NULL,
     FOREIGN KEY (order_id) REFERENCES orders_info(order_id),
-    FOREIGN KEY (product_id) REFERENCES products(product_id),
-    INDEX (order_id),
-    INDEX (product_id),
-    INDEX (order_id, product_id)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
+    FOREIGN KEY (product_id) REFERENCES products(product_id)
+);
+GO
 
 -- Table structure for cart
 CREATE TABLE cart (
-    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    id INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
     product_id INT NOT NULL,
     ip_add VARCHAR(250),
     user_id INT NOT NULL,
     qty INT NOT NULL,
     FOREIGN KEY (product_id) REFERENCES products(product_id),
-    FOREIGN KEY (user_id) REFERENCES user_info(user_id)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+    FOREIGN KEY (user_id) REFERENCES user_info(user_id),
+);
+GO
 
 
-INSERT INTO `products` (`product_id`, `product_cat`, `product_brand`, `product_title`, `product_price`, `product_desc`, `product_image`, `product_keywords`) VALUES
+-- Insert data into categories
+INSERT INTO categories (cat_id, cat_title) VALUES
+(1, 'Slippers'),
+(2, 'High-Top Sneakers'),
+(3, 'Low-Top Sneakers'),
+(4, 'Accessories'),
+(5, 'For Sales');
+GO
+
+-- Insert data into brands
+INSERT INTO brands (brand_id, brand_title) VALUES
+(1, 'CONVERSE'),
+(2, 'VANS'),
+(3, 'PALLADIUM'),
+(4, 'NEW BALANCE'),
+(5, 'K-SWISS'),
+(6, 'SNEAKER BUZZ'),
+(7, 'ACCESSORIES'),
+(8, 'SUPRA');
+GO
+
+INSERT INTO products (product_id, product_brand ,  product_cat ,  product_title ,  product_price ,  product_desc ,  product_image ,  product_keywords ) VALUES
 (1, 1, 5, 'CONVERSE CHUCK TAYLOR ALL STAR SEASONAL COLOR', 50, 'CONVERSE CHUCK TAYLOR ALL STAR SEASONAL COLOR', 'sale_1.jpg', 'CONVERSE, CHUCK TAYLOR, SEASONAL COLOR'),
 (2, 1, 5, 'CONVERSE CHUCK TAYLOR ALL STAR DIGITAL DAZE', 25, 'CONVERSE CHUCK TAYLOR ALL STAR DIGITAL DAZE', 'sale_2.jpg', 'CONVERSE, CHUCK TAYLOR, DIGITAL DAZE'),
 (3, 1, 5, 'CONVERSE CHUCK TAYLOR ALL STAR CX', 30, 'CONVERSE CHUCK TAYLOR ALL STAR CX', 'sale_3.jpg', 'CONVERSE, CHUCK TAYLOR, CX'),
@@ -180,9 +167,9 @@ INSERT INTO `products` (`product_id`, `product_cat`, `product_brand`, `product_t
 (57, 3, 2, 'PALLADIUM EVO LITE+ RCYCL WP+', 10, 'PALLADIUM EVO LITE+ RCYCL WP+', 'palladium_13.jpg', 'PALLADIUM, EVO LITE+ RCYCL WP+'),
 (58, 3, 2, 'PALLADIUM PALLAPHOENIX FLAME C', 8, 'PALLADIUM PALLAPHOENIX FLAME C', 'palladium_14.jpg', 'PALLADIUM, PALLAPHOENIX FLAME C'),
 (59, 3, 2, 'PALLADIUM PAMPA HI SHAKE', 8, 'PALLADIUM PAMPA HI SHAKE', 'palladium_15.jpg', 'PALLADIUM, PAMPA HI SHAKE'),
-(70, 3, 2, 'PALLADIUM PAMPALICIOUS POP CORN ', 56, 'PALLADIUM PAMPALICIOUS POP CORN', 'palladium_16.jpg', 'PALLADIUM,POP CORN'),
+(70, 3, 2, 'PALLADIUM PAMPALICIOUS POP CORN', 56, 'PALLADIUM PAMPALICIOUS POP CORN', 'palladium_16.jpg', 'PALLADIUM, POP CORN'),
 (71, 1, 5, 'Chuck Taylor All Star 1970s', 4, 'Chuck Taylor All Star 1970s', 'converse_17.jpg', 'Chuck, 1970s'),
-(72, 7, 5, 'CONVERSE T-SHIRT GRAPHICS-SS ICON T ', 5, 'CONVERSE T-SHIRT GRAPHICS-SS ICON T ', 'acs_18.jpg', 'CONVERSE, T-SHIRT'),
+(72, 7, 5, 'CONVERSE T-SHIRT GRAPHICS-SS ICON T', 5, 'CONVERSE T-SHIRT GRAPHICS-SS ICON T', 'acs_18.jpg', 'CONVERSE, T-SHIRT'),
 (73, 7, 5, 'NEO COLOR PACKABLE JACKET', 5, 'NEO COLOR PACKABLE JACKET', 'acs_19.jpg', 'NEO, JACKET'),
 (74, 1, 5, 'CONS VOLTAGE MADE IT TO THE TOP', 5, 'CONS VOLTAGE MADE IT TO THE TOP', 'sale_13.jpg', 'CONS, VOLTAGE, MADE IT TO THE TOP'),
 (75, 1, 5, 'CONVERSE CHUCK TAYLOR ALL STAR MADE IT TO THE TOP', 4, 'CONVERSE CHUCK TAYLOR ALL STAR MADE IT TO THE TOP', 'sale_14.jpg', 'CONVERSE, CHUCK TAYLOR, MADE IT TO THE TOP'),
@@ -288,19 +275,106 @@ INSERT INTO `products` (`product_id`, `product_cat`, `product_brand`, `product_t
 (216, 6, 1, 'DÉP SNEAKER BUZZ CLOUD SLIDE', 1, 'DÉP SNEAKER BUZZ CLOUD SLIDE', 'snkb_14.jpg', 'DÉP SNEAKER BUZZ, CLOUD SLIDE'),
 (217, 6, 1, 'DÉP SNEAKER BUZZ CLOUD SLIDE', 1, 'DÉP SNEAKER BUZZ CLOUD SLIDE', 'snkb_15.jpg', 'DÉP SNEAKER BUZZ, CLOUD SLIDE');
 
+-- Creating indexes for admin_info
+CREATE UNIQUE NONCLUSTERED INDEX IX_AdminInfo_Email ON admin_info(admin_email);
+-- Creating indexes for user_info
+CREATE UNIQUE NONCLUSTERED INDEX IX_UsersInfo_Email ON user_info(email);
+-- Creating indexes for email_info
+CREATE UNIQUE NONCLUSTERED INDEX IX_EmailInfo_EmailAddress ON email_info(email_address);
+-- Creating indexes for orders_info
+CREATE NONCLUSTERED INDEX IX_OrdersInfo_UserID ON orders_info(user_id);
+CREATE NONCLUSTERED INDEX IX_OrdersInfo_Email_UserID ON orders_info(email, user_id);
+-- Creating indexes for order_products
+CREATE NONCLUSTERED INDEX IX_OrderProducts_OrderID ON order_products(order_id);
+CREATE NONCLUSTERED INDEX IX_OrderProducts_ProductID ON order_products(product_id);
+CREATE NONCLUSTERED INDEX IX_OrderProducts_OrderID_ProductID ON order_products(order_id, product_id);
+-- Creating indexes for products
+CREATE NONCLUSTERED INDEX IX_Products_ProductCat ON products(product_cat);
+CREATE NONCLUSTERED INDEX IX_Products_ProductBrand ON products(product_brand);
+CREATE NONCLUSTERED INDEX IX_Products_ProductTitle ON products(product_title);
+CREATE NONCLUSTERED INDEX IX_Products_ProductCat_Brand_Title ON products(product_cat, product_brand, product_title);
+
+
+-- Add to cart
+CREATE PROCEDURE AddToCart
+    @p_product_id INT,
+    @p_user_id INT,
+    @p_qty INT
+AS
+BEGIN
+    INSERT INTO cart (product_id, user_id, qty)
+    VALUES (@p_product_id, @p_user_id, @p_qty);
+END;
+GO
+
+
+-- Update user's information
+CREATE PROCEDURE UpdateUser
+    @p_user_id INT,
+    @p_first_name VARCHAR(50),
+    @p_last_name VARCHAR(50),
+    @p_email VARCHAR(255),
+    @p_phone VARCHAR(15),
+    @p_address1 VARCHAR(255),
+    @p_address2 VARCHAR(255)
+AS
+BEGIN
+    UPDATE user_info
+    SET first_name = @p_first_name,
+        last_name = @p_last_name,
+        email = @p_email,
+        phone = @p_phone,
+        address1 = @p_address1,
+        address2 = @p_address2
+    WHERE user_id = @p_user_id;
+END;
+GO
+
+CREATE PROCEDURE DeleteUser
+    @p_user_id INT
+AS
+BEGIN
+    DELETE FROM user_info WHERE user_id = @p_user_id;
+END;
+GO
+
+-- Trigger for inserting data
+CREATE TRIGGER after_order_product_insert
+ON order_products
+AFTER INSERT
+AS
+BEGIN
+    UPDATE orders_info
+    SET prod_count = prod_count + inserted.qty
+    FROM orders_info
+    INNER JOIN inserted ON orders_info.order_id = inserted.order_id;
+END;
+GO
+
+-- Trigger for deleting data
+CREATE TRIGGER after_order_product_delete
+ON order_products
+AFTER DELETE
+AS
+BEGIN
+    UPDATE orders_info
+    SET prod_count = prod_count - deleted.qty
+    FROM orders_info
+    INNER JOIN deleted ON orders_info.order_id = deleted.order_id;
+END;
+GO
+
+
+EXEC AddToCart @p_product_id = 1, @p_user_id = 123, @p_qty = 2, @p_ip_add = '192.168.1.1';
+EXEC UpdateUser 
+    @p_user_id = 1, 
+    @p_first_name = 'John', 
+    @p_last_name = 'Doe', 
+    @p_email = 'john.doe@example.com', 
+    @p_phone = '123-456-7890', 
+    @p_address1 = '123 Elm Street', 
+    @p_address2 = 'Apt 4B';
+EXEC DeleteUser @p_user_id = 1;
 
 
 
-INSERT INTO `user_info` (`user_id`, `first_name`, `last_name`, `email`, `password`, `mobile`, `address1`, `address2`) VALUES
-(26, 'Tran', 'Duc', 'ductran@gmail.com', 'Abc123', '014394332', 'Lao Cai', 'Lao Cai'),
-(27, 'Hung', 'Ngo', 'hung@gmail.com', '1234567890', '0987654321', 'Hanoi', 'Vietnam'),
-(28, 'Tran ', 'Duc', 'tranduc1230@gmail.com', '0987654321', '0987654321', 'Hanoi', 'Vietnam'),
-(29, 'Nigga', 'What', 'nigga@gmail.com', '0987654321', '0987654321', 'Hanoi', 'Vietnam'),
-(30, 'Huong', 'Thanh', 'huongmai@gmail.com', '0987654321', '0987654321', 'Hanoi', 'Vietnam'),
-(32, 'Tran', 'Manh Ngo', 'huy123@gmail.com', '0987654321', '0987654321', 'Hanoi', 'Vietnam');
-
-
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
