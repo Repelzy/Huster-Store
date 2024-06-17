@@ -57,13 +57,13 @@ include "activitity.php";
             <div class="col-md-6">
             <div class="card ">
               <div class="card-header card-header-primary">
-                <h4 class="card-title"> Categories List</h4>
+                <h4 class="card-title"> Brands List</h4>
               </div>
               <div class="card-body">
                 <div class="table-responsive ps">
                   <table class="table table-hover tablesorter " id="">
                     <thead class=" text-primary">
-                        <tr><th>ID</th><th>Categories</th><th>Count</th>
+                        <tr><th>ID</th><th>Brands</th><th>Count</th>
                     </tr></thead>
                     <tbody>
                       <?php 
@@ -90,13 +90,13 @@ include "activitity.php";
           <div class="col-md-6">
             <div class="card ">
               <div class="card-header card-header-primary">
-                <h4 class="card-title">Brands List</h4>
+                <h4 class="card-title">Categories List</h4>
               </div>
               <div class="card-body">
                 <div class="table-responsive ps">
                   <table class="table table-hover tablesorter " id="">
                     <thead class=" text-primary">
-                        <tr><th>ID</th><th>Brands</th><th>Count</th>
+                        <tr><th>ID</th><th>Categories</th><th>Count</th>
                     </tr></thead>
                     <tbody>
                       <?php 

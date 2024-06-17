@@ -127,11 +127,19 @@ $current_page = basename($_SERVER['PHP_SELF']);
 
 		.search-form .input {
 			flex: 1;
-			margin-right: 10px;
+            margin-right: 0;
+            border-top-left-radius: 25px;
+            border-bottom-left-radius: 25px;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
 		}
 
 		.search-form .search-btn {
 			margin: 0;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            border-top-right-radius: 25px;
+            border-bottom-right-radius: 25px;
 		}
 	</style>
 </head>
