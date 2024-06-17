@@ -6,7 +6,7 @@ if(isset($_GET['action']) && $_GET['action']!="" && $_GET['action']=='delete')
 {
 $user_id=$_GET['user_id'];
 
-/*this is delet quer*/
+/*this is delet query*/
 mysqli_query($con,"delete from user_info where user_id='$user_id'")or die("query is incorrect...");
 }
 
