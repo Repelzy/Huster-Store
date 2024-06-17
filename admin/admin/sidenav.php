@@ -39,10 +39,10 @@
 
         Tip 2: you can also add an image using data-image tag
     -->
-            <div class="logo"><a href="index.php" class="simple-text logo-normal">
+            <div class="logo" style= "background-color: #91ebeeb3"><a href="index.php" class="simple-text logo-normal">
                     <img src="./assets/img/Capture.png" style="width: 150px;">
                 </a></div>
-            <div class="sidebar-wrapper">
+            <div class="sidebar-wrapper" style="background-color: #91ebeeb3">
                 <ul class="nav">
                     <li class="nav-item active  ">
                         <a class="nav-link" href="index.php">

@@ -31,7 +31,7 @@
 
 .offline-doc .navbar.navbar-transparent .navbar-brand,
 .offline-doc .navbar.navbar-transparent .collapse .navbar-nav .nav-link {
-  color: #FFF;
+  color: #fff;
 }
 
 .offline-doc .footer {
@@ -95,7 +95,7 @@
   }
   .offline-doc .navbar .collapse .navbar-nav .nav-item .nav-link {
     margin-left: 15px;
-    color: #8b92a9 !important;
+    color: #212529 !important;
   }
 }
 
